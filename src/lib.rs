@@ -313,7 +313,7 @@ impl Drawer {
             vle: DrawVertexLayoutElements::new(&[
                 (DrawVertexLayoutAttribute::Position, DrawVertexLayoutFormat::Float, 0),
                 (DrawVertexLayoutAttribute::TexCoord, DrawVertexLayoutFormat::Float, size_of::<f32>() as Size * 2),
-                (DrawVertexLayoutAttribute::Color, DrawVertexLayoutFormat::B8G8R8A8, size_of::<f32>() as Size * 4),
+                (DrawVertexLayoutAttribute::Color, DrawVertexLayoutFormat::R8G8B8A8, size_of::<f32>() as Size * 4),
                 (DrawVertexLayoutAttribute::AttributeCount, DrawVertexLayoutFormat::Count, 0),
             ]),
             tla: tla,
