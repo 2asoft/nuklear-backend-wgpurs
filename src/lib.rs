@@ -85,7 +85,7 @@ struct Vertex {
     // "TexCoord",
     tex: [f32; 2],
     // "Color",
-    col: [u8; 4],
+    col: [f32; 4],
 }
 
 #[allow(dead_code)]
@@ -291,7 +291,7 @@ impl Drawer {
                     vertex_buffers: &[VertexBufferDescriptor {
                         stride: (size_of::<Vertex>()) as u64,
                         step_mode: InputStepMode::Vertex,
-                        attributes: &vertex_attr_array![0 => Float2, 1 => Float2, 2 => Uint],
+                        attributes: &vertex_attr_array![0 => Float2, 1 => Float2, 2 => Float4],
                     }],
                 },
                 sample_count: 1,
@@ -313,7 +313,7 @@ impl Drawer {
             vle: DrawVertexLayoutElements::new(&[
                 (DrawVertexLayoutAttribute::Position, DrawVertexLayoutFormat::Float, 0),
                 (DrawVertexLayoutAttribute::TexCoord, DrawVertexLayoutFormat::Float, size_of::<f32>() as Size * 2),
-                (DrawVertexLayoutAttribute::Color, DrawVertexLayoutFormat::R8G8B8A8, size_of::<f32>() as Size * 4),
+                (DrawVertexLayoutAttribute::Color, DrawVertexLayoutFormat::R32G32B32A32Float, size_of::<f32>() as Size * 4),
                 (DrawVertexLayoutAttribute::AttributeCount, DrawVertexLayoutFormat::Count, 0),
             ]),
             tla: tla,
