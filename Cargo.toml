@@ -17,6 +17,5 @@ path = "src/lib.rs"
 [dependencies]
 log = "^0.4.11"
 wgpu = "^0.6.0"
-nuklear-rust = "^0.6.2"
+nuklear-rust = { path = "../../../nuklear/nuklear_rust/nuklear-rust" }
 glsl-to-spirv = "^0.1.7"
-
